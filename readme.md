@@ -31,3 +31,10 @@ Asercje z JSON-path:
     <scope>test</scope>
 </dependency>
 ```
+
+Teach a dog to REST:
+https://vimeo.com/17785736
+
+
+CRUD do Customer'a.
+Walidacja firstName i lastName po blackliście z properies'ów (@ExceptionHandler).
