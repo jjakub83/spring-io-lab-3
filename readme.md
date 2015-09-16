@@ -24,12 +24,10 @@ GET /byCreditCard/{number}
 
 Asercje z JSON-path:
 
+```
 <dependency>
     <groupId>com.jayway.jsonpath</groupId>
     <artifactId>json-path</artifactId>
     <scope>test</scope>
 </dependency>
-
-
-
-
+```
