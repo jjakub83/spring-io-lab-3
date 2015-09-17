@@ -1,0 +1,21 @@
+info:
+  component: cs-registry
+
+server:
+  port: 9001
+
+spring:
+  application:
+    name: cs-registry
+
+eureka:
+  instance:
+    hostname: ${HOSTNAME:localhost}
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0

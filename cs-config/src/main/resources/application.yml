@@ -1,0 +1,21 @@
+info:
+  component: cs-config
+
+server:
+  port: 9000
+
+spring:
+  application:
+    name: cs-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///home/darek/Devel/Workspace/Sages/SpringIO3/config
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
