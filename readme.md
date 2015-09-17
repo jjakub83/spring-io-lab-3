@@ -83,3 +83,16 @@ class Merchant {
 	PaybackPolicy paybackPolicy
 }
 ```
+
+
+```
+@Configuration
+class RepositoryRestMvcConfigurer extends SpringBootRepositoryRestMvcConfiguration {
+
+    @Override
+    protected void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+        super.configureRepositoryRestConfiguration(config)
+        config.exposeIdsFor(Merchant)
+    }
+}
+```
