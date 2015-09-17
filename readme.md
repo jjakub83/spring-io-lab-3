@@ -38,3 +38,11 @@ https://vimeo.com/17785736
 
 CRUD do Customer'a.
 Walidacja firstName i lastName po blackliście z properies'ów (@ExceptionHandler).
+
+
+```
+@Bean
+public EnvironmentRepository environmentRepository() {
+	return new NativeEnvironmentRepository(environment);
+}
+```
