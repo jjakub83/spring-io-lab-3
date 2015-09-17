@@ -70,3 +70,16 @@ class DbPopulator implements CommandLineRunner {
     }
 }
 ```
+
+
+```
+class PaybackPolicy {
+	BigDecimal percentage
+    BigDecimal minAmount
+    BigDecimal maxPayback
+}
+class Merchant {
+	String name
+	PaybackPolicy paybackPolicy
+}
+```
