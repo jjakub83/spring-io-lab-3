@@ -46,3 +46,27 @@ public EnvironmentRepository environmentRepository() {
 	return new NativeEnvironmentRepository(environment);
 }
 ```
+
+
+```
+@Component
+class DbPopulator implements CommandLineRunner {
+
+    @Autowired CustomerRepository repository
+
+    @Override
+    void run(String... args) throws Exception {
+        if (repository.findAll().isEmpty()) {
+            repository.save([
+                new Customer(
+                    firstName: 'John',
+                    lastName: 'Smith',
+                    creditCard: '9876543212345678'),
+                new Customer(
+                    firstName: 'Jane',
+                    lastName: 'Smith',
+                    creditCard: '9876678998766789')])
+        }
+    }
+}
+```
