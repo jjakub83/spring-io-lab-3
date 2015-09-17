@@ -96,3 +96,21 @@ class RepositoryRestMvcConfigurer extends SpringBootRepositoryRestMvcConfigurati
     }
 }
 ```
+
+
+
+```
+class Purchase {
+    BigDecimal amount
+    String creditCardNumber
+    Long merchantId
+}
+
+class Payback {
+	String id
+	Long customerId
+	BigDecimal amount
+	Purchase purchase
+}
+```
+
