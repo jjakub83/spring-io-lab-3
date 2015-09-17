@@ -99,6 +99,16 @@ class RepositoryRestMvcConfigurer extends SpringBootRepositoryRestMvcConfigurati
 
 
 
+Stworzyć endpoint REST'owy, który przyjmuje
+na wejściu obiekt `Purchase`, znajduje przy
+pomocy feign-client'ów dane customer'a na
+podstawie jego numeru karty kredytowej
+oraz dane merchant'a na podstawie jego id,
+a nstępnie wylicza kwotę payback'u przez
+mnożenie kwoty transakcji i procentu payback'u
+i zapisuje wynik w encji Payback w swojej
+bazie danych. Drugi endpoint do listowania
+zapisanych obiektów Payback.
 ```
 class Purchase {
     BigDecimal amount
