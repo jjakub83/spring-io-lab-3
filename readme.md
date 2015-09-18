@@ -1,3 +1,6 @@
+Prezentacja:
+https://docs.google.com/presentation/d/1lY6ucGmfQnB_TTFckNz4DV0iC91eragbazOG_hrpwZI/edit?usp=sharing
+
 System Requirements:
 
 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-system-requirements
