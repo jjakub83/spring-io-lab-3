@@ -1,6 +1,7 @@
 package customer
 
 import groovy.transform.CompileStatic
+import groovy.util.logging.Slf4j
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -13,8 +14,10 @@ import static org.springframework.http.ResponseEntity.notFound
 import static org.springframework.http.ResponseEntity.ok
 import static org.springframework.web.bind.annotation.RequestMethod.GET
 
+@Slf4j
 @RestController
 @CompileStatic
+@RequestMapping('/customers')
 class CustomerController {
 
     private final CustomerService service
@@ -24,15 +27,15 @@ class CustomerController {
         this.service = service
     }
 
-    @RequestMapping(value = '/', method = GET,
-        produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = GET, produces = APPLICATION_JSON_VALUE)
     List<Customer> findAll() {
+        log.info('findAll')
         return service.findAll()
     }
 
-    @RequestMapping(value = '/{id}', method = GET,
-        produces = APPLICATION_JSON_VALUE)
-    ResponseEntity<Customer> findOne(Long id) {
+    @RequestMapping(value = '/{id}', method = GET, produces = APPLICATION_JSON_VALUE)
+    ResponseEntity<Customer> findOne(@PathVariable Long id) {
+        log.info("findOne($id)")
         return service.findOne(id)
             .map({ ok(it) })
             .orElseGet({ notFound().build() })
@@ -40,7 +43,8 @@ class CustomerController {
 
     @RequestMapping(value = '/findByCreditCard/{cardNo}', method = GET,
         produces = APPLICATION_JSON_VALUE)
-    Customer findByCreditCard(String cardNo) {
+    Customer findByCreditCard(@PathVariable String cardNo) {
+        log.info("findByCreditCard($cardNo)")
         return service.findByCreditCard(cardNo)
     }
 

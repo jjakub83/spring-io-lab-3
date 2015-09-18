@@ -1,0 +1,8 @@
+info:
+  component: ${spring.application.name}
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port}
+    metadataMap:
+      cluster: springio

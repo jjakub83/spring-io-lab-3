@@ -1,0 +1,9 @@
+server:
+  port: 9004
+
+turbine:
+  aggregator:
+    clusterConfig: springio
+  appConfig: cs-customer,cs-merchant,cs-payback,cs-gateway
+  clusterNameExpression: metadata['cluster']
+

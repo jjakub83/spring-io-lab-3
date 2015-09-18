@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cs-auth
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: cs-config
+#      uri: http://localhost:9000/
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/

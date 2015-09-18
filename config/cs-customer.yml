@@ -1,0 +1,14 @@
+server:
+  port: 9010
+
+#spring:
+#  oauth2:
+#    client:
+#      clientId: sppringio
+#      clientSecret: secret
+#      accessTokenUri: http://localhost:9003/oauth/token
+#      userAuthorizationUri: http://localhost:9003/oauth/authorize
+#      clientAuthenticationScheme: form
+#    resource:
+#      userInfoUri: http://localhost:9003/user
+#      preferTokenInfo: false

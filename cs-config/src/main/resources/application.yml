@@ -1,5 +1,5 @@
 info:
-  component: cs-config
+  component: ${spring.application.name}
 
 server:
   port: 9000
