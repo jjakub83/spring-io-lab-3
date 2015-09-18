@@ -1,0 +1,47 @@
+gateway:
+  image: cs-springio/cs-gateway
+  links:
+    - registry:registry
+  environment:
+    - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:9001/eureka/"
+
+payback:
+  image: cs-springio/cs-payback
+  links:
+    - registry:registry
+  environment:
+    - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:9001/eureka/"
+
+merchant:
+  image: cs-springio/cs-merchant
+  links:
+    - registry:registry
+  environment:
+    - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:9001/eureka/"
+
+customer:
+  image: cs-springio/cs-customer
+  links:
+    - registry:registry
+  environment:
+    - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:9001/eureka/"
+
+config:
+  image: cs-springio/cs-config
+  links:
+    - registry:registry
+  environment:
+    - "SPRING_CLOUD_CONFIG_SERVER_GIT_URI=file:///repo"
+    - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:9001/eureka/"
+  volumes:
+    - "/home/darek/Devel/Workspace/Sages/SpringIO3/config:/repo"
+
+dashboard:
+  image: cs-springio/cs-dashboard
+  links:
+    - registry:registry
+  environment:
+    - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:9001/eureka/"
+
+registry:
+  image: cs-springio/cs-registry
