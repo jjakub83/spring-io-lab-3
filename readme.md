@@ -129,3 +129,6 @@ class Payback {
 
 
 https://github.com/spring-cloud-samples/authserver
+
+
+http://localhost:8080/uaa/oauth/authorize?response_type=code&client_id=acme&redirect_uri=http://example.com
