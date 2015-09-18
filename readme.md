@@ -132,3 +132,11 @@ https://github.com/spring-cloud-samples/authserver
 
 
 http://localhost:8080/uaa/oauth/authorize?response_type=code&client_id=acme&redirect_uri=http://example.com
+
+
+```
+POST http://localhost:8080/uaa/oauth/token
+Authorization: Basic YWNtZTphY21lc2VjcmV0
+
+grant_type=authorization_code&code=DKe5p2&redirect_uri=http%3A%2F%2Fexample.com
+```
